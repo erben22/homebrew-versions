@@ -1,19 +1,20 @@
 cask 'clion-eap' do
-  version '144.4199.17'
-  sha256 'ecf813207cc1efb00b3a0774762d29d8886c029a7cb245917ddcd596ca322cf4'
+  version '162.1236.1'
+  sha256 '7735273143cc4f99f9d090b53d77b2b68026c352d151631b0446f904ec364c0d'
 
   url "https://download.jetbrains.com/cpp/CLion-#{version}.dmg"
-  name 'CLion'
+  name 'CLion EAP'
   homepage 'https://confluence.jetbrains.com/display/CLION/Early+Access+Program'
   license :commercial
 
-  app 'CLion EAP.app'
+  conflicts_with cask: 'clion'
+
+  app 'CLion 2016.2 EAP.app'
 
   zap delete: [
-                '~/Library/Preferences/com.jetbrains.CLion-EAP.plist',
-                '~/Library/Preferences/CLion15',
-                '~/Library/Application Support/CLion15',
-                '~/Library/Caches/CLion15',
-                '~/Library/Logs/CLion15',
+                '~/Library/Preferences/CLion2016.2',
+                '~/Library/Application Support/CLion2016.2',
+                '~/Library/Caches/CLion2016.2',
+                '~/Library/Logs/CLion2016.2',
               ]
 end

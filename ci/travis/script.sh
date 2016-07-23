@@ -8,15 +8,12 @@
 # shellcheck disable=SC1090
 . "${TRAVIS_BUILD_DIR}/ci/travis/helpers.sh"
 
-enter_build_step
-
 header 'Running script.sh...'
 
 if any_casks_modified; then
   modified_casks=($(modified_cask_files))
+  run brew cask _audit_modified_casks "${TRAVIS_COMMIT_RANGE}"
   run brew cask style "${modified_casks[@]}"
 fi
 
 run bundle exec rake test
-
-exit_build_step

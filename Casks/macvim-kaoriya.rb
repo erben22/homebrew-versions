@@ -3,13 +3,13 @@ cask 'macvim-kaoriya' do
     version '7.4:20130911'
     sha256 'd9fc6e38de1852e4ef79e9ea78afa60e606bf45066cff031e349d65748cbfbce'
   else
-    version '7.4:20160301'
-    sha256 '48931b00eb380c443efc0218608ff94622472459f4932559d1e0725940530201'
+    version '7.4:20160325'
+    sha256 '10cd1ea1fe9c64f26ee626633070886d6d19024a5953aa5406c19ad5fa059a2f'
   end
 
   url "https://github.com/splhack/macvim-kaoriya/releases/download/#{version.after_colon}/MacVim-KaoriYa-#{version.after_colon}.dmg"
   appcast 'https://github.com/splhack/macvim-kaoriya/releases.atom',
-          checkpoint: '9f764cf483adc40474994c1119139f7e433dc10ffd99087e285736763b5dbac0'
+          checkpoint: '599b0a40724283f88a303536854bb8cce7b14f16482886d09bbeb22762c3ed8d'
   name 'MacVim KaoriYa'
   homepage 'https://github.com/splhack/macvim-kaoriya'
   license :oss
@@ -18,7 +18,7 @@ cask 'macvim-kaoriya' do
 
   app 'MacVim.app'
 
-  mvim = 'MacVim.app/Contents/MacOS/mvim'
+  mvim = "#{appdir}/MacVim.app/Contents/MacOS/mvim"
   executables = %w[macvim-askpass mvim mvimdiff mview mvimex gvim gvimdiff gview gvimex]
   executables += %w[vi vim vimdiff view vimex] if ARGV.include? '--override-system-vim'
   executables.each { |e| binary mvim, target: e }

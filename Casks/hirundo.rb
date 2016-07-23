@@ -1,11 +1,13 @@
 cask 'hirundo' do
-  version '0.8.2'
-  sha256 '4665a3de5bdc32cc20bf05e214443fc262637730c2a53be974b9686e4eff2d45'
+  version '0.9.6'
+  sha256 'fa33093fba1ec4eae5cd1bc9864508c544bacec8a7745c3e12691e959e1b9337'
 
   url "https://stylemac.com/hirundo/versions/#{version}/Hirundo-#{version}.tgz"
   name 'Hirundo'
   homepage 'https://stylemac.com/hirundo/'
   license :commercial
+
+  depends_on macos: '>= :el_capitan'
 
   app 'Hirundo.app'
 end

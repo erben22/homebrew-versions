@@ -1,22 +1,22 @@
 cask 'pycharm-eap' do
-  version '143.1453.1'
-  sha256 '2d4a004a589790a692eb18b23abc887fb385dcb49607251656e3de1200e1d51b'
+  version '162.646.12'
+  sha256 '52dec6f316b3d672537af337a32c7572802583a78100dad0d556b9f1dee0f88c'
 
-  url "https://download.jetbrains.com/python/pycharm-professional-#{version}-jdk-bundled.dmg"
-  name 'PyCharm'
+  url "https://download.jetbrains.com/python/pycharm-professional-#{version}.dmg"
+  name 'PyCharm EAP'
   homepage 'https://confluence.jetbrains.com/display/PYH/JetBrains+PyCharm+Preview+(EAP)'
   license :commercial
 
   conflicts_with cask: 'pycharm'
 
-  app 'PyCharm.app'
+  app 'PyCharm 2016.2 EAP.app'
+
+  uninstall delete: '/usr/local/bin/charm'
 
   zap delete: [
-                '~/Library/Preferences/com.jetbrains.pycharm.plist',
-                '~/Library/Preferences/PyCharm50',
-                '~/Library/Application Support/PyCharm50',
-                '~/Library/Caches/PyCharm50',
-                '~/Library/Logs/PyCharm50',
-                '/usr/local/bin/charm',
+                '~/Library/Preferences/PyCharm2016.2',
+                '~/Library/Application Support/PyCharm2016.2',
+                '~/Library/Caches/PyCharm2016.2',
+                '~/Library/Logs/PyCharm2016.2',
               ]
 end

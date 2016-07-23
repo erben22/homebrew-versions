@@ -1,10 +1,10 @@
 cask 'sublime-text-dev' do
-  version '3107'
-  sha256 '3957e3c9a4b36d47469d6f48cab4047d33d39a1b857015ba0eb1b172a980ee2c'
+  version '3118'
+  sha256 '00cefffc73cb024d57ade9de429cbbf09bb5d48e2c86b3b9d2ddffcc0ce3e337'
 
   url "https://download.sublimetext.com/Sublime%20Text%20Build%20#{version}.dmg"
   appcast 'https://www.sublimetext.com/updates/3/dev/appcast_osx.xml',
-          checkpoint: '564ce219978cb59ade4ce7583dc286a683ec2046ce94083d9c5e5e7bdf72a365'
+          checkpoint: 'a39c658dcf867a25b95ce624c95d5d6666720e29713bc05894f88c3564a2d25d'
   name 'Sublime Text'
   homepage 'https://www.sublimetext.com/3dev'
   license :closed
@@ -12,7 +12,7 @@ cask 'sublime-text-dev' do
   conflicts_with cask: 'caskroom/versions/sublime-text3'
 
   app 'Sublime Text.app'
-  binary 'Sublime Text.app/Contents/SharedSupport/bin/subl'
+  binary "#{appdir}/Sublime Text.app/Contents/SharedSupport/bin/subl"
 
   uninstall quit: 'com.sublimetext.3'
 

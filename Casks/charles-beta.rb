@@ -1,11 +1,13 @@
 cask 'charles-beta' do
-  version '3.11.3b5'
-  sha256 'ef1215db67aaede00dc61b260d79a051efdc32e0760b9c9f87d1155082705d85'
+  version '3.11.6b3'
+  sha256 '07960cf8da976fb9ac78673bcbcee32a8c8dbda40cb3f9da790da832b73c02aa'
 
   url "https://www.charlesproxy.com/assets/release/#{version.gsub(%r{b\d$}, '')}/charles-proxy-#{version}.dmg"
   name 'Charles'
   homepage 'https://www.charlesproxy.com/download/beta/'
   license :commercial
+
+  depends_on macos: '>= :lion'
 
   app 'Charles.app'
 

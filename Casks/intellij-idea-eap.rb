@@ -1,19 +1,22 @@
 cask 'intellij-idea-eap' do
-  version '145.184.1'
-  sha256 '934a2eb8f649d9913afcb885ccf26f30d061983d5ac04a9ac6b1fb40f95f6579'
+  version '2016.2.1-162.1447.7'
+  sha256 'bc08389238585515e244287379379b46f6d89b098fc0698046abacba08f3115d'
 
-  url "https://download.jetbrains.com/idea/ideaIU-#{version}.dmg"
+  url "https://download.jetbrains.com/idea/ideaIU-#{version.sub(%r{.*?-}, '')}.dmg"
   name 'IntelliJ IDEA EAP'
-  homepage 'https://confluence.jetbrains.com/display/IDEADEV/IDEA+16+EAP'
+  homepage 'https://confluence.jetbrains.com/display/IDEADEV/IDEA+2016.2+EAP'
   license :commercial
 
-  app 'IntelliJ IDEA 16 EAP.app'
+  auto_updates true
+
+  app 'IntelliJ IDEA 2016.2.1 EAP.app'
+
+  uninstall delete: '/usr/local/bin/idea'
 
   zap delete: [
-                '~/Library/Preferences/com.jetbrains.intellij.plist',
-                '~/Library/Application Support/IntelliJIdea16',
-                '~/Library/Preferences/IntelliJIdea16',
-                '~/Library/Caches/IntelliJIdea16',
-                '~/Library/Logs/IntelliJIdea16',
+                "~/Library/Caches/IntelliJIdea#{version.major_minor}",
+                "~/Library/Logs/IntelliJIdea#{version.major_minor}",
+                "~/Library/Application Support/IntelliJIdea#{version.major_minor}",
+                "~/Library/Preferences/IntelliJIdea#{version.major_minor}",
               ]
 end

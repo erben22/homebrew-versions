@@ -1,6 +1,6 @@
 cask 'iterm2-beta' do
-  version '2.9.20160206'
-  sha256 'b9c680b089bad6829246019e1ebb24017992fbbbd89d58b13f0ac6d9816ff5a5'
+  version '3.0.5'
+  sha256 'a0081635383a7a1eda12c99c2800979168bfa757b737b0b15a2639bdb2ce6f95'
 
   url "https://iterm2.com/downloads/beta/iTerm2-#{version.dots_to_underscores}.zip"
   name 'iTerm2'
@@ -8,6 +8,7 @@ cask 'iterm2-beta' do
   license :gpl
 
   auto_updates true
+  depends_on macos: '>= 10.8'
 
   app 'iTerm.app'
 

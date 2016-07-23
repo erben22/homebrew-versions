@@ -1,18 +1,23 @@
 cask 'intellij-idea-ce' do
-  version '15.0.4'
-  sha256 'e81f4869670edf3dbc3cd9dc702cd6c36e2601486154f8137d57a869132af6ea'
+  version '2016.2'
+  sha256 '0e156bc6e0ee021527f2a5e3d123cc55f0d24dfe7d0dfb96f58dd0e18f0b6161'
 
-  url "https://download.jetbrains.com/idea/ideaIC-#{version}-custom-jdk-bundled.dmg"
+  url "https://download.jetbrains.com/idea/ideaIC-#{version}.dmg"
   name 'IntelliJ IDEA Community Edition'
+  name 'IntelliJ IDEA CE'
   homepage 'https://www.jetbrains.com/idea/'
   license :apache
 
-  app 'IntelliJ IDEA 15 CE.app'
+  auto_updates true
+
+  app 'IntelliJ IDEA CE.app'
+
+  uninstall delete: '/usr/local/bin/idea'
 
   zap delete: [
-                '~/Library/Application Support/IdeaIC15',
-                '~/Library/Preferences/IdeaIC15',
-                '~/Library/Caches/IdeaIC15',
-                '~/Library/Logs/IdeaIC15',
+                "~/Library/Application Support/IdeaIC#{version.major_minor}",
+                "~/Library/Preferences/IdeaIC#{version.major_minor}",
+                "~/Library/Caches/IdeaIC#{version.major_minor}",
+                "~/Library/Logs/IdeaIC#{version.major_minor}",
               ]
 end

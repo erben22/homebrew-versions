@@ -1,20 +1,23 @@
 cask 'intellij-idea-ce-eap' do
-  version '145.184.1'
-  sha256 '16f784e54965c4e7fcbaa5629f736f2aadb25bd4d9c8754ef1f2c0e502377f56'
+  version '2016.2.1-162.1447.7'
+  sha256 '0fccf89de4b9dd8ac3f6e1aba78d660cf1ff36c4bb3c26d054c0d5afc85c7a0c'
 
-  url "https://download.jetbrains.com/idea/ideaIC-#{version}.dmg"
-  name 'IntelliJ IDEA EAP :: CE'
-  homepage 'https://confluence.jetbrains.com/display/IDEADEV/IDEA+16+EAP'
+  url "https://download.jetbrains.com/idea/ideaIC-#{version.sub(%r{.*?-}, '')}.dmg"
+  name 'IntelliJ IDEA Community Edition EAP'
+  name 'IntelliJ IDEA CE EAP'
+  homepage 'https://confluence.jetbrains.com/display/IDEADEV/IDEA+2016.2+EAP'
   license :apache
 
-  app 'IntelliJ IDEA 16 CE EAP.app'
+  auto_updates true
+
+  app 'IntelliJ IDEA 2016.2.1 CE EAP.app'
+
+  uninstall delete: '/usr/local/bin/idea'
 
   zap delete: [
-                '~/Library/Application Support/IdeaIC16',
-                '~/Library/Caches/IdeaIC16',
-                '~/Library/Logs/IdeaIC16',
-                '~/Library/Preferences/com.jetbrains.intellij.ce.plist',
-                '~/Library/Preferences/IdeaIC16',
-                '~/Library/Saved Application State/com.jetbrains.intellij.ce.savedState',
+                "~/Library/Application Support/IdeaIC#{version.major_minor}",
+                "~/Library/Preferences/IdeaIC#{version.major_minor}",
+                "~/Library/Caches/IdeaIC#{version.major_minor}",
+                "~/Library/Logs/IdeaIC#{version.major_minor}",
               ]
 end

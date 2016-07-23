@@ -1,6 +1,6 @@
 cask 'julia-nightly' do
-  version '0.5.0-e55c22a793'
-  sha256 'e3d6587836f9a638b3e1856710146460711482901890a50996a2b5dec876b03b'
+  version '0.5.0-fa5af23773'
+  sha256 'fc0bf2e2c45ff6274b0b75c0406d7c2290829dbc85ea42e4393e1ae409a6a901'
 
   # amazonaws.com is the official download host per vendor homepage
   url "https://s3.amazonaws.com/julianightlies/bin/osx/x64/#{version.sub(%r{(\d+\.\d+).*}, '\1')}/julia-#{version}-osx.dmg"
@@ -11,7 +11,7 @@ cask 'julia-nightly' do
   depends_on macos: '>= :lion'
 
   app "Julia-#{version.sub(%r{(.+)-(.+)}, '\1-dev-\2')}.app"
-  binary "Julia-#{version.sub(%r{(.+)-(.+)}, '\1-dev-\2')}.app/Contents/Resources/julia/bin/julia"
+  binary "#{appdir}/Julia-#{version.sub(%r{(.+)-(.+)}, '\1-dev-\2')}.app/Contents/Resources/julia/bin/julia"
 
   zap delete: '~/.julia'
 end

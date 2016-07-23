@@ -1,6 +1,6 @@
 cask 'thunderbird-beta-ru' do
-  version '42.0b2'
-  sha256 'c00e10cfdc993a5b52a60d7bf74b440944d1d1f76bc2a9963bed3599c7d59ce6'
+  version '47.0b2'
+  sha256 '66fe6a6369c4fa31b4e3eb84967969e194b24c401050d6a3c89a3876ac2c491b'
 
   url "https://download.mozilla.org/?product=thunderbird-#{version}&os=osx&lang=ru"
   name 'Mozilla Thunderbird'

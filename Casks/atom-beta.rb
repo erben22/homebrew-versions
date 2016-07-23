@@ -1,11 +1,11 @@
 cask 'atom-beta' do
-  version '1.6.0-beta7'
-  sha256 '13a757f767999b8c17df0ac3cc77284d81ffc97c82de14b29659fd54dc8bcb62'
+  version '1.9.0-beta0'
+  sha256 'bab9075255bfbde31c941ef9bf6884278691ce09fb6e20575ec66f05b1137258'
 
   # github.com/atom/atom was verified as official when first introduced to the cask
   url "https://github.com/atom/atom/releases/download/v#{version}/atom-mac.zip"
   appcast 'https://github.com/atom/atom/releases.atom',
-          checkpoint: '6f83bee247819bc337b21acf7c5f4c7e4385ec3c93bcaa52c75f5175841b16b5'
+          checkpoint: '36482ec93a5bab3545b533fbb9f8c4fff5fa3bbe6180ec05c8d4f0ae2074ac93'
   name 'Github Atom Beta'
   homepage 'https://atom.io/beta'
   license :mit
@@ -14,8 +14,8 @@ cask 'atom-beta' do
   depends_on macos: '>= :mountain_lion'
 
   app 'Atom Beta.app'
-  binary 'Atom Beta.app/Contents/Resources/app/apm/node_modules/.bin/apm', target: 'apm'
-  binary 'Atom Beta.app/Contents/Resources/app/atom.sh', target: 'atom-beta'
+  binary "#{appdir}/Atom Beta.app/Contents/Resources/app/apm/node_modules/.bin/apm", target: 'apm'
+  binary "#{appdir}/Atom Beta.app/Contents/Resources/app/atom.sh", target: 'atom-beta'
 
   postflight do
     suppress_move_to_applications

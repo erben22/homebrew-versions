@@ -1,6 +1,6 @@
 cask 'thunderbird-gl' do
-  version '38.6.0'
-  sha256 '430f1555b0ef650ecc61074586b2d9771ebb9412ddd3d832dade697b476dddff'
+  version '45.2.0'
+  sha256 '0c638e85ccef5f42d1696808053897c5a7c6cc35a309db985f2dc64f3b889c07'
 
   url "https://download.mozilla.org/?product=thunderbird-#{version}&os=osx&lang=gl"
   name 'Mozilla Thunderbird'
